@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #e67e51;
+  --brand-black: #1a1a1a;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-[#FFF8F3];
+  }
+}
+
+.nav-glass-effect {
+  @apply bg-[#FF7B28] backdrop-blur-lg border-b border-orange-100;
+}
+
+.content-glass-effect {
+  @apply bg-white/90 backdrop-blur-lg border-b border-orange-100;
+}
+
+.brand-gradient {
+  @apply bg-gradient-to-r from-[#E67E51] to-[#FF6B35];
+}
+
+.menu-card {
+  @apply relative overflow-hidden rounded-3xl transition-all duration-300 hover:shadow-xl;
+}
+
+.menu-card::before {
+  content: "";
+  @apply absolute inset-0 bg-[#FF7B28]/90 backdrop-blur-sm opacity-0 transition-opacity duration-300;
+}
+
+.menu-card:hover::before {
+  @apply opacity-100;
+}
+.slider-container .slick-slide {
+  padding: 0 10px;
+}
+
+.slider-container .slick-dots li button:before {
+  color: #ff7b28;
+}
+
+.slider-container .slick-dots li.slick-active button:before {
+  color: #ff4500;
+}
+
+.slider-container .slick-prev,
+.slider-container .slick-next {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 123, 40, 0.8);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.slider-container .slick-prev:hover,
+.slider-container .slick-next:hover {
+  background: rgba(255, 69, 0, 0.9);
+}
+
+.slider-container .slick-prev {
+  left: -20px;
+}
+
+.slider-container .slick-next {
+  right: -20px;
+}
